@@ -1,0 +1,717 @@
+:root {
+  --brand: #1d5a3f;
+  --brand-d: #123d2a;
+  --mint: #e7f0ea;
+  --ink: #16231c;
+  --berry: #b83a55;
+  --muted: #5b6b62;
+  --bs-body-font-family: "IBM Plex Sans Arabic", "Cairo", system-ui, sans-serif;
+  --bs-body-color: var(--ink);
+  
+  /* ألوان دار الطيبات المعتمدة */
+  --brand-green: #1a4d38;
+  --brand-green-hover: #133a2a;
+  --tag-bg: #e8f5ed;
+  --badge-orange: #e59d3b;
+  --badge-green: #f0fdf4;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  font-family: var(--bs-body-font-family);
+  line-height: 1.8;
+  overflow-x: hidden;
+  background: #fbfdfb;
+}
+
+h1, h2, h3 {
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+a {
+  color: var(--brand);
+}
+
+:focus-visible {
+  outline: 3px solid var(--berry);
+  outline-offset: 2px;
+}
+
+/* ==================== Navigation ==================== */
+.site-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #e1ebe5;
+}
+
+.brand-logo {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar-brand small {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--brand);
+}
+
+.nav-link.active {
+  box-shadow: inset 0 -2px 0 var(--berry);
+}
+
+/* ==================== Buttons & Transitions ==================== */
+.btn-brand {
+  background: var(--brand);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.55rem 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+  background: var(--brand-d);
+  color: #fff;
+}
+
+.btn-outline-brand {
+  border: 1.5px solid var(--brand);
+  color: var(--brand);
+  border-radius: 999px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-brand:hover {
+  background: var(--brand);
+  color: #fff;
+}
+
+/* حاوية أزرار الهيرو */
+.hero .d-flex {
+  display: flex !important;
+  gap: 16px !important;
+  align-items: center;
+}
+
+/* تنسيق وتكبير أزرار الهيرو مع الترانزيشن */
+.hero .btn {
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 13px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* زر استكشف المنتجات (الأبيض) */
+.hero .btn.btn-light {
+  background-color: #ffffff;
+  color: #173829;
+  border: 2px solid #ffffff;
+  margin-top: 50px;
+}
+
+.hero .btn.btn-light:hover {
+  background-color: #f1f3f5;
+  border-color: #f1f3f5;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* زر تعرّف على الشركة (المفرّغ) */
+.hero .btn.btn-light-o,
+.btn-light-o {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  margin-top: 50px;
+}
+
+.hero .btn.btn-light-o:hover,
+.btn-light-o:hover {
+  background-color: #ffffff;
+  color: #173829;
+  border-color: #ffffff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.hero .btn:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* ==================== Hero Section ==================== */
+.hero {
+  background-color: #173829;
+  color: #ffffff;
+  padding: 6.5rem 0; 
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+.hero > .container {
+  width: 100%;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--brand-green);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  line-height: 1.25;
+}
+
+.hero p.lead {
+  max-width: 34rem;
+  color: #bcd0c4;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* حاوية الكارت المائل وإزاحته لليسار */
+.hero-card-wrapper {
+  position: relative;
+  max-width: 600px;
+  margin-right: auto;
+  margin-left: -70px;
+}
+
+.hero-card-inner {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px 30px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  transform: rotate(-3.5deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo-img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* البادجات العائمة */
+.hero-float-badge {
+  position: absolute;
+  z-index: 10;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-top {
+  bottom: 14px;
+  left: -10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #123d2a;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-bottom {
+  top: 10px;
+  right: -5px;
+  border-radius: 20px;
+  background-color: #e59d3b;
+  color: #ffffff;
+  padding: 8px 20px;
+  box-shadow: 0 6px 18px rgba(229, 157, 59, 0.45);
+}
+
+/* ==================== Flavors Bar ==================== */
+.flavors {
+  background: var(--brand);
+  color: #fff;
+  padding: 0.9rem 0;
+  font-weight: 500;
+}
+
+.flavors ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.8rem;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ==================== Sections & Features ==================== */
+.section {
+  padding: 4.5rem 0;
+}
+
+.section-mint {
+  background: var(--mint);
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 0.5rem;
+}
+
+.section-sub {
+  color: var(--muted);
+  max-width: 38rem;
+}
+
+.feature {
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 1.6rem;
+  height: 100%;
+  border: 1px solid #d9e6de;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+}
+
+.feature i {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.9rem;
+  background: var(--brand);
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.stat {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.stat b {
+  display: block;
+  font-size: 2rem;
+  color: var(--brand);
+  line-height: 1.2;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.about-img {
+  border-radius: 1.5rem;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* حاوية خريطة الموقع */
+.map-wrapper {
+  width: 100%;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid #d9e6de;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+}
+
+.map-frame {
+  width: 100%;
+  height: 420px;
+  border: 0;
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .map-frame {
+    height: 300px;
+  }
+}
+
+/* ==================== Products & Catalog ==================== */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.chip {
+  border: 1.5px solid #bcd0c4;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.35rem 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.chip.active,
+.chip:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.product-col {
+  display: flex;
+}
+
+.product-col[hidden] {
+  display: none !important;
+}
+
+.product {
+  background: #fff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  border: 1px solid #d9e6de;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.product:hover {
+  border-color: var(--brand);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.product-img {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  flex-shrink: 0;
+  background: #fff;
+  padding: 0.75rem;
+  border-bottom: 1px solid #eef3f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.product-body {
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: 1 1 auto;
+}
+
+.product h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  min-height: 2.8em;
+}
+
+.meta {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.product-body .js-details {
+  margin-top: auto;
+}
+
+@media (max-width: 575.98px) {
+  .product-img { padding: 0.5rem; }
+  .product-body { padding: 0.85rem; }
+  .product h3 { font-size: 0.95rem; }
+}
+
+/* ==================== CTA & Footer ==================== */
+.cta {
+  background: var(--brand-d);
+  color: #fff;
+  border-radius: 1.75rem;
+  padding: clamp(1.8rem, 5vw, 3.5rem);
+}
+
+.cta h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+
+.page-head {
+  background: var(--brand-d);
+  color: #fff;
+  padding: 3rem 0;
+}
+
+.page-head h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0;
+}
+
+.contact-card {
+  background: #fff;
+  border: 1px solid #d9e6de;
+  border-radius: 1.25rem;
+  padding: 1.6rem;
+  height: 100%;
+}
+
+.contact-card i {
+  color: var(--berry);
+  font-size: 1.6rem;
+}
+
+.spec {
+  margin: 0 0 1.2rem;
+}
+
+.spec div {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e1ebe5;
+  padding: 0.55rem 0;
+}
+
+.spec dt {
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.spec dd {
+  margin: 0;
+  font-weight: 700;
+}
+
+.site-footer {
+  background: #0d2a1d;
+  color: #cfe0d5;
+  padding: 3.5rem 0 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.footer-grid h2 {
+  margin-bottom: 1rem;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  word-break: break-word;
+}
+
+.footer-contact i {
+  color: #8fc2a3;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1.3fr;
+    gap: 2.5rem;
+  }
+  .footer-links {
+    justify-self: center;
+  }
+  .footer-contact-col {
+    justify-self: end;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-grid {
+    gap: 4rem;
+  }
+}
+
+.site-footer a {
+  color: #cfe0d5;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.site-footer h2 {
+  color: #fff;
+}
+
+.site-footer li {
+  margin-bottom: 0.35rem;
+}
+
+.copy {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 2rem 0 0;
+  padding-top: 1.2rem;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ==================== Hero Responsive (المعدل للموبايل مع الحفاظ على الميلان) ==================== */
+@media (max-width: 991.98px) {
+  .hero {
+    padding: 3.5rem 0 4rem;
+    min-height: auto;
+    overflow-x: clip;
+  }
+
+  .hero .row {
+    align-items: center !important;
+    text-align: center;
+  }
+
+  .hero p.lead {
+    margin-inline: auto;
+    font-size: 1.05rem;
+  }
+
+  .hero-card-wrapper {
+    margin: 2.5rem auto 1rem auto !important;
+    max-width: 360px;
+    width: 90%;
+  }
+
+  /* الحفاظ على الميلان حتى في الموبايل */
+  .hero-card-inner {
+    transform: rotate(-2.5deg) !important;
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .hero-logo-img {
+    max-width: 220px;
+  }
+
+  .badge-top {
+    left: 10px;
+    bottom: -15px;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  .badge-bottom {
+    right: 10px;
+    top: -15px;
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  .hero .d-flex {
+    justify-content: center;
+    gap: 12px !important;
+    padding-bottom: 0 !important;
+  }
+
+  .hero .btn.btn-light,
+  .hero .btn.btn-light-o,
+  .btn-light-o {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .hero .d-flex {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+
+  .hero .btn {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  /* تأكيد الحفاظ على الميلان في أصغر الشاشات */
+  .hero-card-inner {
+    transform: rotate(-2.5deg) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
